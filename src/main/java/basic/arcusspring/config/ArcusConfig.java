@@ -1,5 +1,7 @@
 package basic.arcusspring.config;
 
+import basic.arcusspring.MyCacheManager;
+import com.navercorp.arcus.spring.cache.ArcusCache;
 import com.navercorp.arcus.spring.cache.ArcusCacheConfiguration;
 import com.navercorp.arcus.spring.cache.ArcusCacheManager;
 import com.navercorp.arcus.spring.cache.StringKeyGenerator;
@@ -30,7 +32,7 @@ public class ArcusConfig extends CachingConfigurerSupport{
     @Bean
     @Override
     public CacheManager cacheManager() {
-        return new ArcusCacheManager(
+        return new MyCacheManager(
                 ADMIN_ADDRESS,
                 SERVICE_CODE,
                 new ConnectionFactoryBuilder(),
